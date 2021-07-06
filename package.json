@@ -18,6 +18,7 @@
   "homepage": "https://github.com/oliveirabalsa/olivia-ai-web-scraping#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.10",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1"
@@ -29,6 +30,7 @@
     "@types/node": "^16.0.0",
     "eslint": "^7.30.0",
     "jest": "^27.0.6",
+    "playwright": "^1.12.3",
     "ts-jest": "^27.0.3",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.3.5"
