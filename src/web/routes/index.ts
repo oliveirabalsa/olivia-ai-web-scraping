@@ -1,9 +1,8 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 import App from "../controller/App";
 
-const app = new App();
 const routes = Router();
 
-routes.get("/", app.init);
+routes.get("/generate", App.init);
 
 export default routes;
