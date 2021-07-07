@@ -1,4 +1,4 @@
-import ICredentials from "../../../../useCase/dto/ICredentials";
+import ICredentials from "../../../../usecase/dto/ICredentials";
 import { LoginError } from "../../../../web/handler/LoginError";
 const { chromium } = require("playwright");
 import IAuthenticateIntegration from "../interface/IAuthenticateIntegration";
