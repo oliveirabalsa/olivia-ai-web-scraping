@@ -1,5 +1,5 @@
 import cheerio from "cheerio";
-import IApiProps from "../../useCase/dto/IApiProps";
+import IApiProps from "../../usecase/dto/IApiProps";
 
 class ExtractPropHelper {
   execute(pageContent: string): IApiProps {
