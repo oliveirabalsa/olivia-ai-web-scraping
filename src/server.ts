@@ -8,5 +8,5 @@ app.use(routes);
 
 // app.use(GlobalError);
 app.listen(3030, () => {
-  console.log("Server is running");
+  ("Server is running");
 });
