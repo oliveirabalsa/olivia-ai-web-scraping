@@ -24,10 +24,12 @@ class App {
         pageContent,
         pageCookies
       );
-      
+
       return response.status(200).json(content);
     } catch (e) {
-      return response.status(500).json({ message: "Internal Server Erroru" });
+      return response
+        .status(500)
+        .json({ message: "Internal Server Error please try again later" });
     }
   }
 }
