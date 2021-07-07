@@ -1,4 +1,4 @@
-import ICredentials from "../../../../useCase/dto/ICredentials";
+import ICredentials from "../../../../usecase/dto/ICredentials";
 import IPage from "./IPage";
 
 export default interface IAuthenticateIntegration {
