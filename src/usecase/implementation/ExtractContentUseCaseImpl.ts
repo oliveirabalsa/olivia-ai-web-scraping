@@ -1,13 +1,20 @@
 import IExtractContentUseCase from "../interface/IExtractContentUseCase";
 import extractPropsHelper from "../../web/helper/ExtractPropsHelper";
 import extractFinancialDetailsHelper from "../../web/helper/ExtractFinancialDetailsHelper";
-import { Financials } from "../../domain/financials/Financials";
+import writeFile from "../../web/helper/WriteToFileHelper";
+import getCached from "../../web/helper/GetCachedPageHelper";
 import { http } from "../../infra/integration/axios/config";
+import { Financials } from "../../domain/financials/Financials";
 
 export default class ExtractContentUseCaseImpl
   implements IExtractContentUseCase
 {
-  async execute(pageContent: string, pageCookies: string): Promise<any> {
+  async execute(pageContent: string, pageCookies: string): Promise<Financials> {
+    const finalCachedContent = await getCached.execute(
+      "final-cached-content",
+      "json"
+    );
+    if (finalCachedContent) return JSON.parse(finalCachedContent);
     const financeDetails = await extractFinancialDetailsHelper.execute(
       pageContent
     );
@@ -22,11 +29,19 @@ export default class ExtractContentUseCaseImpl
       },
     });
 
-    const financial = content.data;
+    const { data: financial } = content;
 
-    return {
+    const financialContent = {
       data: financeDetails,
       ...financial,
     };
+
+    writeFile.execute(
+      JSON.stringify(financialContent),
+      "final-cached-content",
+      "json"
+    );
+
+    return financialContent;
   }
 }
