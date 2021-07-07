@@ -99,6 +99,8 @@ The project use axios retry in order to solve the unstable api and local cache
 
 - Implement documentation about the endpoint and increase more than one
 
+- Implement tests
+
 ## :memo: License
 
 This project is under License MIT. See the documentation [LICENSE](LICENSE) for more details.
