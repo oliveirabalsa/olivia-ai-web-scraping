@@ -43,7 +43,7 @@ This is a **_Olivia AI web scraping challenge_**, is a Project that **use the No
 
 ## 🤔 How to run project
 
-- Clone the project using https://github.com/oliveirabalsa/olivia-ai-web-scraping;
+- Clone the project using `git clone https://github.com/oliveirabalsa/olivia-ai-web-scraping`;
 - Run: `npm install` at source folder;
 - Run: `npm start` and the server will start;
 - Using Postman, Insomnia or your favorite browser do a GET request in: `localhost:3030/generate`.
