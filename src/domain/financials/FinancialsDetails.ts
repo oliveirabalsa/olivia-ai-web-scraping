@@ -1,4 +1,4 @@
-export interface FinalcialsDetails {
+export interface FinancialsDetails {
   open: number;
   high: number;
   low: number;

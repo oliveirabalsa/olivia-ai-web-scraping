@@ -1,9 +1,15 @@
 import AuthenticateIntegrationImpl from "../../infra/integration/playwright/implementation/AuthenticationIntegrationImpl";
+import IPage from "../../infra/integration/playwright/interface/IPage";
 import ICredentials from "../dto/ICredentials";
+import IMakeLoginUseCase from "../interface/IMakeLoginUseCase";
 
-export default class MakeLoginUseCaseImpl {
-  async execute(credentials: ICredentials) {
+export default class MakeLoginUseCaseImpl implements IMakeLoginUseCase {
+  async execute(credentials: ICredentials): Promise<IPage> {
     const authenticateIntegration = new AuthenticateIntegrationImpl();
-    return await authenticateIntegration.execute(credentials);
+    const pageData = await authenticateIntegration.execute(
+      credentials
+    );
+
+    return pageData
   }
 }

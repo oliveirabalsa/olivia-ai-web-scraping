@@ -1,10 +1,10 @@
-import { FinalcialsDetails } from "./FinalcialsDetails";
+import { FinancialsDetails } from "./FinancialsDetails";
 import { YearlyFinancial } from "./YearlyFinancial";
 
 export interface Financials {
   stock: string;
   IPO: string;
   industry: string;
-  data: FinalcialsDetails;
+  data: FinancialsDetails;
   yearlyFinancials: YearlyFinancial[];
 }

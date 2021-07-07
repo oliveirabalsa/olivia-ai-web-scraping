@@ -7,11 +7,11 @@ export default class ExtractCredentialsUseCaseImpl
 {
   execute(html: string): ICredentials {
     const $ = cheerio.load(html);
-    const credentials = $("div > div")
+    const [credentials] = $("div > div")
       .toArray()
       .map((item) => $(item).text());
 
-    const [user, password] = credentials[0]
+    const [user, password] = credentials
       .split("'")
       .filter((str) => str && !str.includes(":"));
 
